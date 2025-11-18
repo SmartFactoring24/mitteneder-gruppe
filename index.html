@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <!-- Preload font files -->
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mitteneder Gruppe</title>
+    <meta
+      name="description"
+      content="Persönliche und digitale Experten-Beratung zu Versicherungen, Altersvorsorge, Immobilienfinanzierung, Geldanlage und mehr."
+    />
+
+    <!-- Favicon and icons -->
+
+    <link rel="icon" href="assets/identity/favicon.ico" type="image/x-icon" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/identity/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/identity/favicon-32x32.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/identity/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="assets/identity/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="assets/identity/android-chrome-512x512.png"
+    />
+    <link rel="manifest" href="assets/identity/site.webmanifest" />
+
+    <!-- Open Graph tags -->
+
+    <link rel="canonical" href="" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Versicherungen &amp; Finanzen Schweinfurt | Mitteneder Gruppe"
+    />
+    <meta
+      property="og:description"
+      content="Persönliche und digitale Experten-Beratung zu Versicherungen, Altersvorsorge, Immobilienfinanzierung, Geldanlage und mehr."
+    />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="Mitteneder Gruppe" />
+    <meta
+      property="article:modified_time"
+      content="2025-10-06T11:40:43+00:00"
+    />
+    <meta
+      property="og:image"
+      content="assets/images/identity/link/linkvorschau.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Versicherungen &amp; Finanzen Schweinfurt | Mitteneder Gruppe"
+    />
+    <meta
+      name="twitter:image"
+      content="assets/images/identity/link/fischlein-gespraech.jpg"
+    />
+
+    <!-- Preload fonts -->
+
+    <link
+      rel="preload"
+      href="/assets/fonts/Montserrat/static/Montserrat-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/Montserrat/static/Montserrat-Bold.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/Montserrat/static/Montserrat-SemiBold.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/Poppins/Poppins-SemiBold.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      @font-face {
+        font-family: "Montserrat-Regular";
+        src: url(/assets/fonts/Montserrat/static/Montserrat-Regular.ttf);
+      }
+
+      @font-face {
+        font-family: "Montserrat-Bold";
+        src: url(/assets/fonts/Montserrat/static/Montserrat-Bold.ttf);
+      }
+
+      @font-face {
+        font-family: "Montserrat-SemiBold";
+        src: url(/assets/fonts/Montserrat/static/Montserrat-SemiBold.ttf);
+      }
+
+      @font-face {
+        font-family: "Poppins-SemiBold";
+        src: url(/assets/fonts/Poppins/Poppins-SemiBold.ttf);
+      }
+
+      body,
+      .counters h3 {
+        font-family: "Montserrat-Regular";
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      .btn,
+      .legal-page b,
+      .team-member .team-member-name,
+      .nino .quote {
+        font-family: "Montserrat-SemiBold", sans-serif;
+      }
+
+      header nav a,
+      .accordion {
+        font-family: Poppins-SemiBold;
+      }
+
+      .list-title {
+        font-family: "Montserrat-Bold", sans-serif;
+      }
+    </style>
+
+    <!-- Stylesheets -->
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+
+    <!-- Consent Manager -->
+
+    <link
+      rel="stylesheet"
+      id="silktide-consent-manager-css"
+      href="css/silktide-consent-manager.css"
+    />
+    <script src="js/silktide-consent-manager.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <a href="/" class="logo">
+          <img src="assets/identity/MittenederGruppe.png" alt="logo" />
+        </a>
+
+        <img id="menu-control" src="assets/icons/menu.svg" alt="" />
+
+        <nav id="menu">
+          <a href="ueber-uns.html">Über uns</a>
+          <a href="fuerwen.html">Für wen</a>
+          <a href="leistungen.html">Leistungen</a>
+          <a href="referenzen.html">Referenzen</a>
+          <a href="karriere.html">Karriere</a>
+
+          <a href="terminvereinbarung.html" class="btn">Termin buchen</a>
+          <a href="kontakt.html" class="btn btn-dark">Kontakt</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="hero hero-main">
+        <div class="hero-overlay">
+          <div class="container">
+            <div class="text fade-in">
+              <h1>
+                Dein Schlüssel zu finanzieller <br />
+                Freiheit & Sicherheit.
+              </h1>
+              <p>
+                Als ganzheitlicher Ansprechpartner für Versicherungen und
+                Finanzen erhältst Du von unseren Finanzexperten genau die
+                Lösungen, welche zu Deiner Situation passen. Alles aus einer
+                Hand.
+              </p>
+
+              <a href="" class="btn btn-light">Termin buchen</a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="vimeo-embed"
+          data-src="https://player.vimeo.com/video/1123607058?muted=1&autoplay=1&loop=1&background=1&app_id=122963"
+          style="width: 100vw; height: 100vh"
+        >
+          <p>
+            Um dieses Video zu sehen, stimmen Sie bitte der Verwendung von
+            Medien-Cookies zu.
+          </p>
+        </div>
+      </div>
+
+      <div class="container-full fade-in home-top">
+        <div class="container">
+          <div class="grid-home">
+            <div class="text">
+              <h2>Für jedes Anliegen ein Experte.​</h2>
+              <p>
+                Freue Dich auf ganzheitliche Experten-Beratung zu all Deinen
+                Themen. Egal ob in der Agentur, bei Dir vor Ort oder volldigital
+                – Wir schauen uns Deine Situation, Wünsche und Risiken genau an
+                und finden Deinen passenden Ansprechpartner. So entwerfen wir
+                ein Konzept, das perfekt auf Dich zugeschnitten ist. <br />
+              </p>
+
+              <a href="leistungen.html" class="btn dark-btn">Alle Leistungen</a>
+              <img src="assets/images/nino-portrait.jpg" alt="" />
+            </div>
+
+            <div class="box-right">
+              <div class="box slide-in">
+                <h4>Finanzierung</h4>
+                <p>
+                  Die besten Konditionen für Dich und Deine Immobilie – aus über
+                  300 Banken in ganz Deutschland.
+                </p>
+              </div>
+
+              <div class="box slide-in">
+                <h4>Investment</h4>
+                <p>
+                  Investiere und beobachte, wie Dein Vermögen mit den besten
+                  Titeln, ETF’s und Fonds wächst.
+                </p>
+              </div>
+
+              <div class="box slide-in">
+                <h4>Versicherung</h4>
+                <p>
+                  Zuverlässiger Versicherungsschutz für Dich, Deine Liebsten und
+                  Deinen Betrieb – individuell und flexibel.
+                </p>
+              </div>
+
+              <div class="box slide-in">
+                <h4>Altersvorsorge</h4>
+                <p>
+                  Steuern sparen und gleichzeitig fürs Alter vorsorgen – bei uns
+                  erhältst Du die richtige Strategie.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper swiper-badges">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="assets/logos/top-experte-2024.png" alt="" />
+              </div>
+
+              <div class="swiper-slide">
+                <img src="assets/logos/top-experte-2023.png" alt="" />
+              </div>
+
+              <div class="swiper-slide">
+                <img src="assets/logos/ida-siegel-standart.png" alt="" />
+              </div>
+
+              <div class="swiper-slide">
+                <img src="assets/logos/Design-ohne-Titel-9.png" alt="" />
+              </div>
+
+              <div class="swiper-slide">
+                <img src="assets/logos/top-experte-2021-1.png" alt="" />
+              </div>
+
+              <div class="swiper-slide">
+                <img src="assets/logos/top-experte-2020-1.png" alt="" />
+              </div>
+
+              <div class="swiper-slide">
+                <img src="assets/logos/ihk-logo-1.png" alt="" />
+              </div>
+
+              <div class="swiper-slide">
+                <img src="assets/logos/dqs-logo-1.png" alt="" />
+              </div>
+
+              <div class="swiper-slide">
+                <img src="assets/logos/mundm-berufsunfähigkeit-1.png" alt="" />
+              </div>
+
+              <div class="swiper-slide">
+                <img
+                  src="assets/logos/institut-fuer-vorsorge-und-finanzplanung-1.png"
+                  alt=""
+                />
+              </div>
+
+              <div class="swiper-slide">
+                <img src="assets/logos/franke-bornberg-kraftfahrt.png" alt="" />
+              </div>
+
+              <div class="swiper-slide">
+                <img src="assets/logos/mundm-belastungstest-1.png" alt="" />
+              </div>
+
+              <div class="swiper-slide">
+                <img src="assets/logos/tüv-kundenberater.png" alt="" />
+              </div>
+
+              <div class="swiper-slide">
+                <img src="assets/logos/ivfp-unternehmensqualität.png" alt="" />
+              </div>
+
+              <div class="swiper-slide">
+                <img src="assets/logos/dasscoring-privatrente.png" alt="" />
+              </div>
+
+              <div class="swiper-slide">
+                <img src="assets/logos/franke-bornberg-kraftfahrt.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-full bg-grey fade-in">
+        <div class="space"></div>
+        <div class="container">
+          <div class="grid-2 grid-1-1">
+            <div class="text">
+              <h2>
+                Unsere digitale <br />
+                Geheimwaffe.
+              </h2>
+              <p>
+                An alles gedacht – ein Versprechen, das schwer zu halten ist!
+                Genau dafür haben wir den digitalen Alles Sicher Plan
+                entwickelt. Diese Software hilft uns, Deinen Bedarf genau zu
+                ermitteln und Dir die beste Lösung anzubieten. So halten wir
+                jedes Versprechen ein.
+              </p>
+
+              <a href="leistungen.html" class="btn dark-btn">Mehr zum Planer</a>
+            </div>
+
+            <img
+              class="img-absolute slide-in"
+              src="assets/images/prioritäten-mockup.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="container-full fade-in">
+        <div class="container">
+          <div class="g-2">
+            <div class="text">
+              <h2>Das sagen unsere Kunden.</h2>
+              <p>
+                Wir legen besonders viel Wert darauf, dass es mit unseren Kunden
+                auch auf persönlicher Ebene gut funktioniert. Und das merkt man
+                in jeder Zusammenarbeit.
+              </p>
+
+              <a href="referenzen.html" class="btn">Mehr Referenzen</a>
+            </div>
+
+            <div class="swiper-wrapper-outside kunde-swiper-2-outside">
+              <div class="swiper-button-prev"></div>
+
+              <div class="swiper kunde-swiper-2">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="kunde">
+                      <div class="kunde-details bg-grey">
+                        <h3>Marcel Model</h3>
+                        <p class="kunde-rating">★★★★★</p>
+                        <p class="kunde-unternehmen">Wirth Model GmbH</p>
+
+                        <p>
+                          Wir haben Herrn Nino Fischlein als sehr engagierten,
+                          ehrlichen und sehr kompetenten Berater kennengelernt.
+                          Wir sind mit seiner Agentur sehr zufrieden und können
+                          diese uneingeschränkt weiterempfehlen.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <div class="kunde">
+                      <div class="kunde-details bg-grey">
+                        <h3>Lisa Hofmann</h3>
+                        <p class="kunde-rating">★★★★★</p>
+                        <p class="kunde-unternehmen">nyce</p>
+
+                        <p>
+                          Die Zusammenarbeit mit Nino ist fachlich fundiert,
+                          herzlich und unglaublich unkompliziert. Er hört zu,
+                          ist ehrlich und menschlich, bringt seine Ideen ein und
+                          denkt sehr lösungsorientiert. Wir haben bereits
+                          verschiedene Projekte mit Nino umgesetzt und jede
+                          Zusammenarbeit war erfolgreich.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <div class="kunde">
+                      <div class="kunde-details bg-grey">
+                        <h3>Fabian Gehring</h3>
+                        <p class="kunde-rating">★★★★★</p>
+                        <p class="kunde-unternehmen">Privatkunde</p>
+
+                        <p>
+                          Der Service und die Beratung ist echt der Hammer. Man
+                          hat immer einen Ansprechpartner und es wird sich für
+                          einen Zeit genommen.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <div class="kunde">
+                      <div class="kunde-details bg-grey">
+                        <h3>Florian Wolff</h3>
+                        <p class="kunde-rating">★★★★★</p>
+                        <p class="kunde-unternehmen">Privatkunde</p>
+
+                        <p>
+                          Nach dem Gespräch haben wir uns sehr gut aufgehoben
+                          gefühlt. Wir sind mit all unseren Versicherungen
+                          umgezogen, weil wir uns fair behandelt gefühlt haben
+                          und alles sehr transparent ist, was uns sehr wichtig
+                          war.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <div class="kunde">
+                      <div class="kunde-details bg-grey">
+                        <h3>Florian Förg</h3>
+                        <p class="kunde-rating">★★★★★</p>
+                        <p class="kunde-unternehmen">Weingut Förg</p>
+
+                        <p>
+                          Individuelle und persönliche Beratung auch bei
+                          speziellen Fällen! Immer erreichbar! Unkomplizierte
+                          und schnelle Abwicklung im Schadensfall!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <div class="kunde">
+                      <div class="kunde-details bg-grey">
+                        <h3>Fred Knieß</h3>
+                        <p class="kunde-rating">★★★★★</p>
+                        <p class="kunde-unternehmen">
+                          Fred Knieß Personal Training
+                        </p>
+
+                        <p>
+                          Unglaublich kompetente Beratung und Anpassung an meine
+                          persönliche Situation. Besonders der Transfer
+                          komplexer Themen, hin zu leicht verständlichen
+                          Erklärungen und die direkte, ehrliche Art hat die
+                          Betreuung optimal abgerundet!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <div class="kunde">
+                      <div class="kunde-details bg-grey">
+                        <h3>Jochen Mölter</h3>
+                        <p class="kunde-rating">★★★★★</p>
+                        <p class="kunde-unternehmen">MEE-Kaffee</p>
+
+                        <p>
+                          Gut, schnell, verständlich. Ideale Unterstützung und
+                          Entlastung für Unternehmer!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <div class="kunde">
+                      <div class="kunde-details bg-grey">
+                        <h3>Thomas Nüsslein</h3>
+                        <p class="kunde-rating">★★★★★</p>
+                        <p class="kunde-unternehmen">Tisch 7</p>
+
+                        <p>
+                          Ich fühle mich jetzt sicherer und weiß ich habe vor
+                          Ort eine tolle Agentur mit einem Ansprechpartner bei
+                          dem ein Anruf genügt. Top!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <div class="kunde">
+                      <div class="kunde-details bg-grey">
+                        <h3>Christine Beständig</h3>
+                        <p class="kunde-rating">★★★★★</p>
+                        <p class="kunde-unternehmen">Spedition Beständig</p>
+
+                        <p>
+                          Schadensangelegenheiten und anderen Anfragen in Sachen
+                          Versicherungen werden schnell und umgehend bearbeitet
+                          bzw. weitergeleitet. Das Team der Agentur ist super
+                          und flexibel. Herzlichen Dank für die angenehme
+                          Zusammenarbeit und weiterhin gute Geschäfte.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <div class="kunde">
+                      <div class="kunde-details bg-grey">
+                        <h3>Michael Nägele</h3>
+                        <p class="kunde-rating">★★★★★</p>
+                        <p class="kunde-unternehmen">Car Lightning Nägele</p>
+
+                        <p>
+                          Egal ob privat oder geschäftlich, ich habe alles bei
+                          Nino laufen! Er ist der kompetenteste, den ich kenne.
+                          Immer freundlich und hat immer ein Ohr für Probleme.
+                          Schadensfälle werden sofort bearbeitet und der
+                          Ausgleich ist binnen weniger Tagen beim Kunden. Ich
+                          kann Nino und seine Crew einfach nur weiterempfehlen!
+                          Macht weiter so und vielen Dank für alles.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <div class="kunde">
+                      <div class="kunde-details bg-grey">
+                        <h3>Joachim Kurtok</h3>
+                        <p class="kunde-rating">★★★★★</p>
+                        <p class="kunde-unternehmen">Kurtok Getriebe Service</p>
+
+                        <p>
+                          Sehr gute Versicherung! Herr Fischlein findet immer
+                          Wege um seine Kunden glücklich zu machen, bei
+                          Problemen ist Herr Fischlein immer bemüht dies so
+                          schnell wie möglich für den Kunden zufriedenstellend
+                          zu bewältigen. Unser Unternehmen ist bei Herrn
+                          Fischlein in guten Händen, vielen Dank!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <div class="kunde">
+                      <div class="kunde-details bg-grey">
+                        <h3>Klaus Pfrang</h3>
+                        <p class="kunde-rating">★★★★★</p>
+                        <p class="kunde-unternehmen">Photo Porst</p>
+
+                        <p>
+                          Hervorragender Service, schnelle problemlose
+                          Abwicklung.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <div class="kunde">
+                      <div class="kunde-details bg-grey">
+                        <h3>Klaus Pfrang</h3>
+                        <p class="kunde-rating">★★★★★</p>
+                        <p class="kunde-unternehmen">Photo Porst</p>
+
+                        <p>
+                          Hervorragender Service, schnelle problemlose
+                          Abwicklung.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-full">
+        <div class="container">
+          <div class="grid-2 grid-1-1 fade-in">
+            <div class="text" style="padding-top: 10px">
+              <h2>Das macht uns besonders.</h2>
+
+              <a href="referenzen.html" class="btn">Mehr Über Uns</a>
+            </div>
+
+            <p>
+              <i
+                >„Das Herzstück unserer Beratung ist Vertrauen, das wir uns
+                jeden Tag durch unermüdlichen Einsatz für unsere Kunden
+                verdienen.“
+              </i>
+
+              <br />
+              <br />
+
+              Wir wissen, wie kompliziert Finanzen und Co. sein können. Deswegen
+              ist es unsere Mission, Dir das Thema so zugänglich wie möglich zu
+              machen. Dabei ist uns Dein Vertrauen besonders wichtig. Denn nur
+              so kannst Du Dich entspannt zurücklehnen und Deine Zeit mit
+              anderen Dingen verbringen.
+            </p>
+          </div>
+
+          <div class="counters fade-in">
+            <div class="counter-item">
+              <h3>+<span class="counter" data-count="120"></span></h3>
+              <p>Jahre gemeinsame Erfahrung</p>
+            </div>
+
+            <div class="counter-item">
+              <h3>+<span class="counter" data-count="12000">0</span></h3>
+              <p>zufriedene Kunden</p>
+            </div>
+
+            <div class="counter-item">
+              <h3>+<span class="counter" data-count="350">0</span></h3>
+              <p>Jährlich regulierte schäden</p>
+            </div>
+          </div>
+          <div class="gallery-cols">
+            <img
+              class="zoom-in"
+              src="assets/images/team-und-buero-8-rotated.jpg"
+              alt=""
+            />
+            <img
+              class="zoom-in"
+              src="assets/images/team-und-buero-3-rotated.jpg"
+              alt=""
+            />
+
+            <img
+              class="zoom-in"
+              src="assets/images/team-und-buero-6-rotated.jpg"
+              alt=""
+            />
+            <img
+              class="zoom-in"
+              src="assets/images/team-und-buero-7-rotated.jpg"
+              alt=""
+            />
+
+            <img
+              class="zoom-in"
+              src="assets/images/team-und-buero-4.jpg-rotated.jpg"
+              alt=""
+            />
+
+            <img
+              class="zoom-in"
+              src="assets/images/team-und-buero-2-rotated.jpg"
+              alt=""
+            />
+
+            <img
+              class="zoom-in"
+              src="assets/images/team-und-buero-5-rotated.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="container-full fade-in bg-cta">
+        <div class="container cta">
+          <div class="text">
+            <h2>
+              Melde Dich gerne bei uns. <br />
+              Wir sind für Dich da.
+            </h2>
+            <p>
+              Bereits bei der Kontaktaufnahme machen wir es dir einfach. Du
+              erreichst uns über unser Formular, WhatsApp, Mail, Telefon oder
+              buche direkt einen Termin online.
+            </p>
+
+            <div class="buttons">
+              <a href="terminvereinbarung.html" class="btn btn-light">
+                Online Termin</a
+              >
+              <a href="kontakt.html" class="btn btn-dark-2"> Kontakt</a>
+            </div>
+          </div>
+          <img
+            class="cta-img"
+            height="675"
+            width="947"
+            src="assets/images/CTA-Nino-Erwin-1.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-col">
+          <img
+            class="logo"
+            src="assets/identity/MittenederGruppe.png"
+            alt="MittenederGruppe"
+            width="200"
+            height="52.63"
+          />
+          <p>VKB Generalagentur Nino Fischlein</p>
+          <a
+            href="https://form.typeform.com/to/jftS4Dix"
+            target="_blank"
+            class="btn btn-white"
+            >Kontakt</a
+          >
+        </div>
+        <div class="footer-col">
+          <p><b>Zentrale Schweinfurt</b></p>
+
+          <p>
+            Athenstraße 1 <br />
+            97424 Schweinfurt
+          </p>
+
+          <a href="tel:097213888857">
+            <img src="assets/icons/phone.svg" alt="" />
+            <p>09721 - 3888857</p>
+          </a>
+          <a href="https://wa.me/97213888857" target="_blank">
+            <img src="assets/icons/whatsapp.svg" alt="" />
+            <p>09721 - 3888857</p>
+          </a>
+          <a href="mailto:info@ninofischlein.de">
+            <img src="assets/icons/envelop.svg" alt="" />
+            <p>info@ninofischlein.de</p>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <p><b>Standort Ingolstadt</b></p>
+
+          <p>
+            Erni-Singerl-Straße 1 <br />
+            85053 Ingolstadt
+          </p>
+
+          <a href="tel:084113809640">
+            <img src="assets/icons/phone.svg" alt="" />
+            <p>09721 - 3888857</p>
+          </a>
+          <a href="https://wa.me/97213888857" target="_blank">
+            <img src="assets/icons/whatsapp.svg" alt="" />
+            <p>09721 - 3888857</p>
+          </a>
+          <a href="mailto:info@ninofischlein.de">
+            <img src="assets/icons/envelop.svg" alt="" />
+            <p>info@ninofischlein.de</p>
+          </a>
+        </div>
+
+        <a
+          href="https://www.provenexpert.com/nino-fischlein-team/?utm_source=Widget&amp;utm_medium=Widget&amp;utm_campaign=Widget"
+          title="Kundenbewertungen &amp; Erfahrungen zu Nino Fischlein &amp; Team. Mehr Infos anzeigen."
+          target="_blank"
+          style="text-decoration: none"
+          class="provenexpert"
+          ><img
+            src="https://images.provenexpert.com/2a/bc/206c82bfc231ee40ed746ef5cab3/widget_portrait_180_de_0.png"
+            alt="Erfahrungen &amp; Bewertungen zu Nino Fischlein &amp; Team"
+            width="180"
+            height="216"
+            style="border: 0"
+        /></a>
+      </div>
+      <div class="footer-bottom">
+        <div class="socials">
+          <a
+            href="https://www.linkedin.com/in/nino-fischlein-2b3b9a196/?originalSubdomain=de"
+            target="_blank"
+          >
+            <img
+              src="assets/icons/linkedin.svg"
+              alt="linkedin"
+              width="20"
+              height="20"
+            />
+          </a>
+          <a href="https://www.facebook.com/ninofischlein.de" target="_blank">
+            <img
+              src="assets/icons/facebook.svg"
+              alt="facebook"
+              width="20"
+              height="20"
+            />
+          </a>
+          <a
+            href="https://www.instagram.com/agentur_fischlein/?hl=de"
+            target="_blank"
+          >
+            <img
+              src="assets/icons/instagram.svg"
+              alt="instagram"
+              width="20"
+              height="20"
+            />
+          </a>
+        </div>
+        <div class="legal">
+          <a href="datenschutz.html">Datenschutz</a>
+          <a href="impressum.html">Impressum</a>
+          <a href="erstinformation.pdf" target="_blank">Erstinformation</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/home.js"></script>
+  </body>
+</html>
