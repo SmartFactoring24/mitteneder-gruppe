@@ -103,6 +103,17 @@ p {
   border-color: white;
   color: white;
 }
+.btn-light--footer {
+  background-color: #103c35 !important;
+  color: #ffffff !important; 
+  border: 1px solid #103c35 !important;
+  box-shadow: none !important;
+}
+.btn-light--footer:hover,
+footer .btn-light--footer:focus {
+  background-color: #ffffff!important;
+  color: #103c35 !important;
+}
 
 /* --------------------- Header ---------------------- */
 header {
