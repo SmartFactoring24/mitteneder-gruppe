@@ -559,6 +559,16 @@ iframe {
      object-fit: cover;
 }
 
+.swiper-logos-large .swiper-slide img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+}
+
 .swiper {
   margin-left: auto;
   margin-right: auto;
@@ -746,7 +756,19 @@ iframe {
       -ms-user-select: none;
           user-select: none;
 }
-.swiper-logos-large .swiper-slide,
+.swiper-logos-large .swiper-slide {
+  padding: 20px;
+  height: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 .swiper-badges .swiper-slide {
   padding: 20px;
 }
@@ -2427,6 +2449,10 @@ main {
   footer .footer-bottom .legal {
     gap: 10px;
   }
+  .swiper-logos-large .swiper-slide {
+    height: 100px;
+    padding: 15px;
+  }
 }
 @media screen and (max-width: 768px) {
   .hero {
@@ -2704,6 +2730,10 @@ main {
   .swiper-wrapper-outside {
     grid-template-columns: 0px auto 0px;
     gap: 0;
+  }
+  .swiper-logos-large .swiper-slide {
+    height: 80px;
+    padding: 10px;
   }
 }
 @media screen and (max-width: 500px) {
