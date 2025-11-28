@@ -876,8 +876,8 @@ iframe {
 }
 
 .contact-box {
-  background: -webkit-gradient(linear, left top, right top, from(#aeb7bc), to(#d6dadd));
-  background: linear-gradient(90deg, #aeb7bc 0%, #d6dadd 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#67686c), to(#aeb7bc));
+  background: linear-gradient(90deg, #67686c 0%, #aeb7bc 100%);
   border-radius: 6px;
   padding: 60px;
 }
