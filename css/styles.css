@@ -2933,3 +2933,36 @@ main {
   object-fit: contain !important;
   display: block;
 }
+
+/* ===== HERO BADGE – RESPONSIVE & CLEAN ===== */
+
+.hero .hero-overlay {
+  position: relative; /* Referenz für absolute Position */
+}
+
+/* Badge grundsätzlich */
+.hero .badge-leistungen {
+  position: absolute;
+  bottom: clamp(12px, 3vw, 32px);
+  right: clamp(12px, 3vw, 32px);
+  z-index: 10;
+
+  width: clamp(80px, 10vw, 160px);
+  height: auto;
+
+  margin: 0 !important;
+  max-width: none;
+ 
+  filter: drop-shadow(0 6px 16px rgba(0,0,0,0.25));
+
+  pointer-events: none; /* rein visuell */
+}
+
+/* Sehr kleine Geräte (z. B. iPhone SE) */
+@media (max-width: 400px) {
+  .hero .badge-leistungen {
+    width: 72px;
+    bottom: 10px;
+    right: 10px;
+  }
+}
