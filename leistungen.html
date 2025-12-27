@@ -172,7 +172,7 @@
               Dich abgestimmt ist.
             </p>
           </div>
-
+      
       <div class="boxes">
   <div class="box">
     <h4 class="no-margin">Finanzierung</h4>
@@ -376,7 +376,7 @@
 
       <div class="container-full bg-grey fade-in">
         <div class="container">
-          <div class="grid-2">
+          <!-- <div class="grid-2">
             <div class="text">
               <p style="font-weight: 600; font-size: 18px; margin-bottom: 10px">
                 Experten für Versicherung
@@ -391,18 +391,106 @@
               </p>
 
               <a href="kontakt.html" class="btn dark-btn">Kontakt</a>
-            </div>
+            </div> -->
 
-            <div
-              class="vimeo-embed slide-in"
-              data-src="https://player.vimeo.com/video/552740373?playsinline=0&transparent=0&app_id=122963"
-              style="width: 426px; height: 240px"
-            >
-              <p>
-                Um dieses Video zu sehen, stimmen Sie bitte der Verwendung von
-                Medien-Cookies zu.
-              </p>
-            </div>
+                      <!-- Service Wheel / Leistungs-Übersicht -->
+<section class="service-wheel-section">
+  <div class="service-wheel-grid">
+    
+    <!-- LEFT TEXT -->
+    <div class="service-wheel-copy">
+      <p class="service-wheel-kicker">Deine Finanzwelt auf einen Blick</p>
+      <h2>Unsere Leistungen.</h2>
+      <p>
+        Unsere Beratung deckt alle wesentlichen Bereiche ab – von Steuern über Investment
+        bis hin zu Vollmachten und Immobilienthemen. Klicke oder hovere einen Bereich
+        im Kreis, um mehr zu erfahren.
+      </p>
+    </div>
+
+    <!-- WHEEL -->
+    <div class="service-wheel-visual">
+      <div class="service-wheel-svg-wrapper">
+        <svg viewBox="0 0 200 200" class="service-wheel-svg" aria-hidden="true">
+          <g transform="translate(100,100)">
+            
+            <!-- =========================
+                 ARC DEFINITIONS FOR TEXT
+            ========================== -->
+            <defs>
+              <path id="arc-steuern"
+                    d="M -32.5 -56.29 A 65 65 0 0 1 32.5 -56.29" />
+              <path id="arc-investment"
+                    d="M 43.49 -48.30 A 65 65 0 0 1 63.58 13.51" />
+              <path id="arc-versicherungen"
+                    d="M 59.38 26.44 A 65 65 0 0 1 6.79 64.64" />
+              <path id="arc-immobilien"
+                    d="M -6.79 64.64 A 65 65 0 0 1 -59.38 26.44" />
+              <path id="arc-vollmachten"
+                    d="M -63.58 13.51 A 65 65 0 0 1 -43.49 -48.30" />
+            </defs>
+
+            <!-- Background ring -->
+            <circle r="80" class="service-wheel-background"></circle>
+
+            <!-- SEGMENTS (wide strokes) -->
+            <circle r="80" class="service-segment service-segment--steuern"
+                    data-service="steuern" transform="rotate(-90)"></circle>
+
+            <circle r="80" class="service-segment service-segment--investment"
+                    data-service="investment" transform="rotate(-18)"></circle>
+
+            <circle r="80" class="service-segment service-segment--versicherungen"
+                    data-service="versicherungen" transform="rotate(54)"></circle>
+
+            <circle r="80" class="service-segment service-segment--immobilien"
+                    data-service="immobilien" transform="rotate(126)"></circle>
+
+            <circle r="80" class="service-segment service-segment--vollmachten"
+                    data-service="vollmachten" transform="rotate(198)"></circle>
+
+            <!-- =========================
+                 CURVED LABELS IN SEGMENTS
+            ========================== -->
+            <text class="service-wheel-text">
+              <textPath href="#arc-steuern" startOffset="50%" text-anchor="middle">Steuern</textPath>
+            </text>
+
+            <text class="service-wheel-text">
+              <textPath href="#arc-investment" startOffset="50%" text-anchor="middle">Investment</textPath>
+            </text>
+
+            <text class="service-wheel-text">
+              <textPath href="#arc-versicherungen" startOffset="50%" text-anchor="middle">Versicherungen</textPath>
+            </text>
+
+            <text class="service-wheel-text">
+              <textPath href="#arc-immobilien" startOffset="50%" text-anchor="middle">Immobilien</textPath>
+            </text>
+
+            <text class="service-wheel-text">
+              <textPath href="#arc-vollmachten" startOffset="50%" text-anchor="middle">
+                Vollmachten &amp; Testamente
+              </textPath>
+            </text>
+          </g>
+        </svg>
+
+        <!-- CENTER LOGO – TRANSPARENT -->
+        <div class="service-wheel-center">
+          <img src="img/logo-mitteneder.svg"
+               alt="Mitteneder Gruppe"
+               class="service-wheel-logo" />
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- Ende Service Wheel -->
+
+
 
             <!--  <iframe
               class="slide-in"
