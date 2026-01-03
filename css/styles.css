@@ -61,8 +61,8 @@ p {
 }
 .btn.btn-light:hover {
   background-color: transparent;
-  color: #103c35;
-  background-color: white;
+  color: white;
+  background-color: #103c35;
 }
 .btn.btn-white {
   background-color: white;
@@ -876,8 +876,8 @@ iframe {
 }
 
 .contact-box {
-  background: -webkit-gradient(linear, left top, right top, from(#67686c), to(#aeb7bc));
-  background: linear-gradient(90deg, #67686c 0%, #aeb7bc 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#67686c), to(#103c35));
+  background: linear-gradient(90deg, #67686c 0%, #103c35 100%);
   border-radius: 6px;
   padding: 60px;
 }
@@ -1137,8 +1137,8 @@ iframe {
 
 /* --------------------- CTA ---------------------- */
 .bg-cta {
-  background: -webkit-gradient(linear, right top, left top, color-stop(13%, #d6dadd), color-stop(43%, #aeb7bc));
-  background: linear-gradient(-90deg, #d6dadd 13%, #aeb7bc 43%);
+  background: -webkit-gradient(linear, right top, left top, color-stop(13%, #103c35), color-stop(43%, #103c35));
+  background: linear-gradient(-90deg, #103c35 13%, #103c35 43%);
   position: relative;
 }
 
@@ -1477,7 +1477,7 @@ iframe {
           align-items: center;
 }
 .team-member.team-cta {
-  background-color: #b0b9bd;
+  background-color: #103c35;
   grid-template-columns: 3.8fr 8.2fr;
 }
 .team-member.team-cta p {
@@ -1487,8 +1487,8 @@ iframe {
   padding: 50px;
 }
 .team-member.karrier-cta {
-  background: -webkit-gradient(linear, right top, left top, color-stop(13%, #d6dadd), color-stop(43%, #aeb7bc));
-  background: linear-gradient(-90deg, #d6dadd 13%, #aeb7bc 43%);
+  background: -webkit-gradient(linear, right top, left top, color-stop(13%, #103c35), color-stop(43%, #aeb7bc));
+  background: linear-gradient(-90deg, #103c35 13%, #aeb7bc 43%);
   grid-template-columns: 3.8fr 8.2fr;
 }
 .team-member.karrier-cta .team-member-img {
