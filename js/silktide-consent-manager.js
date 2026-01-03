@@ -959,30 +959,36 @@ silktideCookieBannerManager.updateCookieBannerConfig({
         "<p>Essenzielle Cookies ermöglichen grundlegende Funktionen und sind für die einwandfreie Funktion der Website erforderlich.  </p>",
       required: true,
       onAccept: function () {
-        const script = document.createElement("script");
-        script.src =
-          "https://widget.superchat.de/snippet.js?applicationKey=WCm0nOvk5oQroNJmB13XGLPqDK";
-        script.referrerPolicy = "no-referrer-when-downgrade";
-        script.async = true;
-        document.head.appendChild(script);
+  // --- SUPERCHAT TEMPORÄR DEAKTIVIERT ---
+  /*
+  const script = document.createElement("script");
+  script.src =
+    "https://widget.superchat.de/snippet.js?applicationKey=WCm0nOvk5oQroNJmB13XGLPqDK";
+  script.referrerPolicy = "no-referrer-when-downgrade";
+  script.async = true;
+  document.head.appendChild(script);
+  */
+  // --- /SUPERCHAT ---
 
-        document.querySelectorAll(".typeform-embed").forEach(function (el) {
-          const src = el.getAttribute("data-src");
-          const title = el.getAttribute("data-title") || "Externe Medien";
-          if (src) {
-            const iframe = document.createElement("iframe");
-            iframe.src = src;
-            iframe.allow = "microphone; camera";
-            iframe.title = title;
-            iframe.style.border = "0px";
-            iframe.style.width = "100%";
-            iframe.style.height = "500px";
-            iframe.style.transform = "translateZ(0px)";
-            el.textContent = "";
-            el.appendChild(iframe);
-          }
-        });
-      },
+  // Typeform bleibt aktiv
+  document.querySelectorAll(".typeform-embed").forEach(function (el) {
+    const src = el.getAttribute("data-src");
+    const title = el.getAttribute("data-title") || "Externe Medien";
+    if (src) {
+      const iframe = document.createElement("iframe");
+      iframe.src = src;
+      iframe.allow = "microphone; camera";
+      iframe.title = title;
+      iframe.style.border = "0px";
+      iframe.style.width = "100%";
+      iframe.style.height = "500px";
+      iframe.style.transform = "translateZ(0px)";
+      el.textContent = "";
+      el.appendChild(iframe);
+    }
+  });
+},
+
     },
     {
       id: "statistiken",
