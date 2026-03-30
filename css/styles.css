@@ -2865,10 +2865,10 @@ main {
 
 /* COLORS */
 .service-segment--steuern       { stroke: #103c35; }
-.service-segment--investment    { stroke: #1c5a50; }
-.service-segment--versicherungen { stroke: #2e7a6d; }
-.service-segment--immobilien    { stroke: #78b8a8; }
-.service-segment--vollmachten   { stroke: #dce8e3; }
+.service-segment--investment    { stroke: #18483f; }
+.service-segment--versicherungen { stroke: #20594e; }
+.service-segment--immobilien    { stroke: #2a6b5d; }
+.service-segment--vollmachten   { stroke: #3a7d6d; }
 
 /* HOVER / ACTIVE */
 .service-segment:hover,

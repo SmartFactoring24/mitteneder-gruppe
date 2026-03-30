@@ -199,6 +199,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const detailSubsegments = document.getElementById("serviceWheelSubsegments");
   const wheelSection = document.querySelector(".service-wheel-section");
   let pinnedKey = null;
+  let detailAnimationToken = 0;
 
   if (!segments.length || !detail) {
     return;
@@ -214,6 +215,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function showIntro() {
+    detailAnimationToken += 1;
     setActiveSegment(null);
     if (wheelSection) {
       wheelSection.classList.remove("is-detail-visible");
@@ -252,8 +254,52 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  function animateDetailSwap(key) {
+    const token = ++detailAnimationToken;
+
+    if (!wheelSection || !wheelSection.classList.contains("is-detail-visible")) {
+      renderDetail(key);
+      return;
+    }
+
+    if (!detail.animate) {
+      renderDetail(key);
+      return;
+    }
+
+    const fadeOut = detail.animate(
+      [
+        { opacity: 1, transform: "translateY(0)" },
+        { opacity: 0, transform: "translateY(12px)" }
+      ],
+      {
+        duration: 140,
+        easing: "ease-out",
+        fill: "forwards"
+      }
+    );
+
+    fadeOut.onfinish = () => {
+      if (token !== detailAnimationToken) return;
+
+      renderDetail(key);
+
+      detail.animate(
+        [
+          { opacity: 0, transform: "translateY(12px)" },
+          { opacity: 1, transform: "translateY(0)" }
+        ],
+        {
+          duration: 220,
+          easing: "ease-out",
+          fill: "forwards"
+        }
+      );
+    };
+  }
+
   function activate(key, pinSelection) {
-    renderDetail(key);
+    animateDetailSwap(key);
     if (pinSelection) {
       pinnedKey = key;
     }
@@ -285,10 +331,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const wheel = document.querySelector(".service-wheel-visual");
   if (wheel) {
     wheel.addEventListener("mouseleave", () => {
-      if (pinnedKey) {
-        activate(pinnedKey, false);
-        return;
-      }
       showIntro();
     });
   }
@@ -297,10 +339,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if (wrapper) {
     wrapper.addEventListener("focusout", (event) => {
       if (!wrapper.contains(event.relatedTarget)) {
-        if (pinnedKey) {
-          activate(pinnedKey, false);
-          return;
-        }
         showIntro();
       }
     });
