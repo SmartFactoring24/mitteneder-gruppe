@@ -309,7 +309,7 @@
 
             <img
               class="slide-in"
-              src="assets/images/leistungen-hero.webp"
+              src="assets/images/shooting-leo-38.jpg"
               alt=""
             />
           </div>
@@ -412,63 +412,93 @@
     
     <!-- LEFT TEXT -->
     <div class="service-wheel-copy">
-      <p class="service-wheel-kicker">Deine Finanzwelt auf einen Blick</p>
-      <h2>Unsere Leistungen.</h2>
-      <p>
-        Unsere Beratung deckt alle wesentlichen Bereiche ab – von Steuern über Investment
-        bis hin zu Vollmachten und Immobilienthemen. Klicke oder hovere einen Bereich
-        im Kreis, um mehr zu erfahren.
-      </p>
+      <div class="service-wheel-copy-stage">
+        <div class="service-wheel-intro">
+          <p class="service-wheel-kicker">Deine Finanzwelt auf einen Blick</p>
+          <h2>Unsere Leistungen.</h2>
+          <p>
+            Unsere Beratung deckt alle wesentlichen Bereiche ab – von Steuern über Investment
+            bis hin zu Vollmachten und Immobilienthemen. <br>
+            <br>
+            <b>Klicke oder hovere über einen Bereich im Kreis, um mehr zu erfahren.</b>
+          </p>
+        </div>
+
+        <div class="service-wheel-detail" id="serviceWheelDetail" aria-live="polite" aria-hidden="true">
+          <div class="service-wheel-detail-head">
+            <p class="service-wheel-detail-kicker" id="serviceWheelDetailKicker">
+              Leistungsbereich
+            </p>
+            <h3 class="service-wheel-detail-title" id="serviceWheelDetailTitle">
+              Steuern
+            </h3>
+          </div>
+
+          <p class="service-wheel-detail-intro" id="serviceWheelDetailIntro">
+            Wir denken Deine Steuerstrategie immer im Zusammenspiel mit Vermögen,
+            Risiko und Liquidität.
+          </p>
+
+          <div class="service-wheel-subsegments" id="serviceWheelSubsegments"></div>
+
+          <ul class="service-wheel-detail-list" id="serviceWheelDetailList">
+            <li>Abstimmung mit Deiner Steuerberatung und relevanten Kanzleien</li>
+            <li>Steueroptimierte Investment- und Immobilienstrukturen</li>
+            <li>Begleitung rund um Einkommen, Vermögen & Holding-Strukturen</li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <!-- WHEEL -->
     <div class="service-wheel-visual">
       <div class="service-wheel-svg-wrapper">
-        <svg viewBox="0 0 200 200" class="service-wheel-svg" aria-hidden="true">
+        <svg viewBox="0 0 200 200" class="service-wheel-svg" aria-label="Interaktive Leistungsübersicht">
           <g transform="translate(100,100)">
             
             <!-- =========================
                  ARC DEFINITIONS FOR TEXT
             ========================== -->
             <defs>
-              <path id="arc-steuern"
-                    d="M -32.5 -56.29 A 65 65 0 0 1 32.5 -56.29" />
               <path id="arc-investment"
-                    d="M 43.49 -48.30 A 65 65 0 0 1 63.58 13.51" />
+                    d="M -45.26 -62.29 A 77 77 0 0 1 45.26 -62.29" />
               <path id="arc-versicherungen"
-                    d="M 59.38 26.44 A 65 65 0 0 1 6.79 64.64" />
+                    d="M 45.26 -62.29 A 77 77 0 0 1 73.23 23.79" />
               <path id="arc-immobilien"
-                    d="M -6.79 64.64 A 65 65 0 0 1 -59.38 26.44" />
+                    d="M 73.23 23.79 A 77 77 0 0 1 0 77" />
               <path id="arc-vollmachten"
-                    d="M -63.58 13.51 A 65 65 0 0 1 -43.49 -48.30" />
+                    d="M 0 77 A 77 77 0 0 1 -73.23 23.79" />
+              <path id="arc-steuern"
+                    d="M -73.23 23.79 A 77 77 0 0 1 -45.26 -62.29" />
             </defs>
 
             <!-- Background ring -->
             <circle r="80" class="service-wheel-background"></circle>
 
             <!-- SEGMENTS (wide strokes) -->
-            <circle r="80" class="service-segment service-segment--steuern"
-                    data-service="steuern" transform="rotate(-90)"></circle>
-
             <circle r="80" class="service-segment service-segment--investment"
-                    data-service="investment" transform="rotate(-18)"></circle>
+                    data-service="investment" transform="rotate(-126)" tabindex="0" role="button"
+                    aria-label="Investment"></circle>
 
             <circle r="80" class="service-segment service-segment--versicherungen"
-                    data-service="versicherungen" transform="rotate(54)"></circle>
+                    data-service="versicherungen" transform="rotate(-54)" tabindex="0" role="button"
+                    aria-label="Versicherungen"></circle>
 
             <circle r="80" class="service-segment service-segment--immobilien"
-                    data-service="immobilien" transform="rotate(126)"></circle>
+                    data-service="immobilien" transform="rotate(18)" tabindex="0" role="button"
+                    aria-label="Immobilien"></circle>
 
             <circle r="80" class="service-segment service-segment--vollmachten"
-                    data-service="vollmachten" transform="rotate(198)"></circle>
+                    data-service="vollmachten" transform="rotate(90)" tabindex="0" role="button"
+                    aria-label="Vollmachten und Testamente"></circle>
+
+            <circle r="80" class="service-segment service-segment--steuern"
+                    data-service="steuern" transform="rotate(162)" tabindex="0" role="button"
+                    aria-label="Steuern"></circle>
 
             <!-- =========================
                  CURVED LABELS IN SEGMENTS
             ========================== -->
-            <text class="service-wheel-text">
-              <textPath href="#arc-steuern" startOffset="50%" text-anchor="middle">Steuern</textPath>
-            </text>
-
             <text class="service-wheel-text">
               <textPath href="#arc-investment" startOffset="50%" text-anchor="middle">Investment</textPath>
             </text>
@@ -483,15 +513,19 @@
 
             <text class="service-wheel-text">
               <textPath href="#arc-vollmachten" startOffset="50%" text-anchor="middle">
-                Vollmachten &amp; Testamente
+                Vollmachten
               </textPath>
+            </text>
+
+            <text class="service-wheel-text">
+              <textPath href="#arc-steuern" startOffset="50%" text-anchor="middle">Steuern</textPath>
             </text>
           </g>
         </svg>
 
         <!-- CENTER LOGO – TRANSPARENT -->
         <div class="service-wheel-center">
-          <img src="img/logo-mitteneder.svg"
+          <img src="assets/identity/MittenederGruppeTransparent.png"
                alt="Mitteneder Gruppe"
                class="service-wheel-logo" />
         </div>
@@ -517,6 +551,7 @@
             ></iframe> -->
           </div>
 
+          <!--
           <div class="swiper swiper-2">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
@@ -674,6 +709,7 @@
             <div class="swiper-button-next" style="color: white"></div>
             <div class="swiper-pagination" style="color: white"></div>
           </div>
+          -->
         </div>
       </div>
 

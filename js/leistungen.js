@@ -191,17 +191,16 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   const segments = document.querySelectorAll(".service-segment");
-  const labelButtons = document.querySelectorAll(".service-wheel-label-btn");
-  const popup = document.getElementById("servicePopup");
-  const popupBackdrop = document.getElementById("servicePopupBackdrop");
-  const popupClose = document.getElementById("servicePopupClose");
-  const popupKicker = document.getElementById("servicePopupKicker");
-  const popupTitle = document.getElementById("servicePopupTitle");
-  const popupIntro = document.getElementById("servicePopupIntro");
-  const popupList = document.getElementById("servicePopupList");
-  const popupSubwheelGroup = document.getElementById("servicePopupSubwheel");
+  const detail = document.getElementById("serviceWheelDetail");
+  const detailKicker = document.getElementById("serviceWheelDetailKicker");
+  const detailTitle = document.getElementById("serviceWheelDetailTitle");
+  const detailIntro = document.getElementById("serviceWheelDetailIntro");
+  const detailList = document.getElementById("serviceWheelDetailList");
+  const detailSubsegments = document.getElementById("serviceWheelSubsegments");
+  const wheelSection = document.querySelector(".service-wheel-section");
+  let pinnedKey = null;
 
-  if (!segments.length || !popup) {
+  if (!segments.length || !detail) {
     return;
   }
 
@@ -212,111 +211,108 @@ document.addEventListener("DOMContentLoaded", function () {
         seg.getAttribute("data-service") === key
       );
     });
-
-    labelButtons.forEach((btn) => {
-      btn.classList.toggle(
-        "is-active",
-        btn.getAttribute("data-service") === key
-      );
-    });
   }
 
-  function openPopup(key) {
+  function showIntro() {
+    setActiveSegment(null);
+    if (wheelSection) {
+      wheelSection.classList.remove("is-detail-visible");
+    }
+    detail.setAttribute("aria-hidden", "true");
+  }
+
+  function renderDetail(key) {
     const data = servicesData[key];
     if (!data) return;
 
     setActiveSegment(key);
+    if (wheelSection) {
+      wheelSection.classList.add("is-detail-visible");
+    }
+    detail.setAttribute("aria-hidden", "false");
 
-    popupKicker.textContent = data.kicker || "Leistungsbereich";
-    popupTitle.textContent = data.title;
-    popupIntro.textContent = data.intro;
+    detailKicker.textContent = data.kicker || "Leistungsbereich";
+    detailTitle.textContent = data.title;
+    detailIntro.textContent = data.intro;
 
-    // Liste
-    popupList.innerHTML = "";
+    detailList.innerHTML = "";
     data.bullets.forEach((item) => {
       const li = document.createElement("li");
       li.textContent = item;
-      popupList.appendChild(li);
+      detailList.appendChild(li);
     });
 
-    // Sub-Wheel zeichnen
-    popupSubwheelGroup.innerHTML = "";
-    const r = 70;
-    const circumference = 2 * Math.PI * r;
-    const segmentFraction = 1 / data.subsegments.length;
-    const visible = circumference * segmentFraction * 0.8;
-    const gap = circumference * segmentFraction * 0.2;
-
+    detailSubsegments.innerHTML = "";
     data.subsegments.forEach((sub, index) => {
-      const circle = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "circle"
-      );
-      circle.setAttribute("r", r.toString());
-      circle.setAttribute("fill", "none");
-      circle.setAttribute("stroke-width", "18");
-      circle.setAttribute("stroke-linecap", "round");
-      circle.setAttribute("stroke", sub.color || "#103c35");
-      circle.setAttribute(
-        "stroke-dasharray",
-        `${visible.toFixed(2)} ${(circumference - visible).toFixed(2)}`
-      );
-
-      const rotation = -90 + (360 * segmentFraction * index);
-      circle.setAttribute(
-        "transform",
-        `rotate(${rotation.toFixed(2)})`
-      );
-      circle.style.opacity = "0.95";
-      circle.style.animation = "serviceSubsegmentIn 0.35s ease-out forwards";
-      circle.style.animationDelay = `${index * 80}ms`;
-
-      popupSubwheelGroup.appendChild(circle);
+      const item = document.createElement("span");
+      item.className = "service-wheel-subsegment-inline";
+      item.textContent = sub.label;
+      item.style.color = sub.color || "#103c35";
+      detailSubsegments.appendChild(item);
     });
-
-    popup.classList.add("is-open");
   }
 
-  function closePopup() {
-    popup.classList.remove("is-open");
-    segments.forEach((seg) => seg.classList.remove("is-active"));
-    labelButtons.forEach((btn) => btn.classList.remove("is-active"));
+  function activate(key, pinSelection) {
+    renderDetail(key);
+    if (pinSelection) {
+      pinnedKey = key;
+    }
   }
 
-  // Hover: nur Highlight
   segments.forEach((seg) => {
     const key = seg.getAttribute("data-service");
+
     seg.addEventListener("mouseenter", () => {
-      setActiveSegment(key);
+      activate(key, false);
     });
-    seg.addEventListener("mouseleave", () => {
-      segments.forEach((s) => s.classList.remove("is-active"));
-      labelButtons.forEach((b) => b.classList.remove("is-active"));
+
+    seg.addEventListener("focus", () => {
+      activate(key, false);
     });
-    seg.addEventListener("click", () => openPopup(key));
+
+    seg.addEventListener("click", () => {
+      activate(key, true);
+    });
+
+    seg.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        activate(key, true);
+      }
+    });
   });
 
-  labelButtons.forEach((btn) => {
-    const key = btn.getAttribute("data-service");
-    btn.addEventListener("mouseenter", () => setActiveSegment(key));
-    btn.addEventListener("mouseleave", () => {
-      segments.forEach((s) => s.classList.remove("is-active"));
-      labelButtons.forEach((b) => b.classList.remove("is-active"));
+  const wheel = document.querySelector(".service-wheel-visual");
+  if (wheel) {
+    wheel.addEventListener("mouseleave", () => {
+      if (pinnedKey) {
+        activate(pinnedKey, false);
+        return;
+      }
+      showIntro();
     });
-    btn.addEventListener("click", () => openPopup(key));
-  });
+  }
 
-  // Popup schließen
-  if (popupBackdrop) {
-    popupBackdrop.addEventListener("click", closePopup);
+  const wrapper = document.querySelector(".service-wheel-svg-wrapper");
+  if (wrapper) {
+    wrapper.addEventListener("focusout", (event) => {
+      if (!wrapper.contains(event.relatedTarget)) {
+        if (pinnedKey) {
+          activate(pinnedKey, false);
+          return;
+        }
+        showIntro();
+      }
+    });
   }
-  if (popupClose) {
-    popupClose.addEventListener("click", closePopup);
-  }
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && popup.classList.contains("is-open")) {
-      closePopup();
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      pinnedKey = null;
+      showIntro();
     }
   });
+
+  showIntro();
 });
 
