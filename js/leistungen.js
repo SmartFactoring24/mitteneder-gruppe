@@ -215,12 +215,39 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function showIntro() {
-    detailAnimationToken += 1;
+    const token = ++detailAnimationToken;
     setActiveSegment(null);
-    if (wheelSection) {
-      wheelSection.classList.remove("is-detail-visible");
+
+    if (!wheelSection || !wheelSection.classList.contains("is-detail-visible")) {
+      detail.setAttribute("aria-hidden", "true");
+      return;
     }
-    detail.setAttribute("aria-hidden", "true");
+
+    if (!detail.animate) {
+      wheelSection.classList.remove("is-detail-visible");
+      detail.setAttribute("aria-hidden", "true");
+      return;
+    }
+
+    const fadeOut = detail.animate(
+      [
+        { opacity: 1, transform: "translateY(0)" },
+        { opacity: 0, transform: "translateY(12px)" }
+      ],
+      {
+        duration: 140,
+        easing: "ease-out",
+        fill: "forwards"
+      }
+    );
+
+    fadeOut.onfinish = () => {
+      if (token !== detailAnimationToken) return;
+      if (wheelSection) {
+        wheelSection.classList.remove("is-detail-visible");
+      }
+      detail.setAttribute("aria-hidden", "true");
+    };
   }
 
   function renderDetail(key) {
