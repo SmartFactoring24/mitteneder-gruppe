@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farbgestaltung – Mitteneder Gruppe</title>
+    <style>
+      :root {
+        --brand: #103c35;
+        --brand-deep: #0b2a25;
+        --brand-soft: #1c5a50;
+        --brand-mid: #2a6b5d;
+        --brand-light: #5b8d82;
+        --mint-fog: #d7e7e1;
+        --mist: #edf5f1;
+        --warm-paper: #f7f4ee;
+        --text: #162321;
+        --muted: #68716e;
+        --line: rgba(16, 60, 53, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Montserrat", "Segoe UI", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(16, 60, 53, 0.08), transparent 24%),
+          linear-gradient(180deg, #fbfaf8 0%, #f2efe8 100%);
+      }
+
+      main {
+        width: min(1220px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 48px 0 64px;
+      }
+
+      .eyebrow {
+        margin: 0 0 10px;
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      h1 {
+        margin: 0 0 14px;
+        font-size: clamp(34px, 4vw, 54px);
+        line-height: 0.98;
+      }
+
+      .lead {
+        max-width: 760px;
+        margin: 0 0 36px;
+        font-size: 18px;
+        line-height: 1.65;
+        color: var(--muted);
+      }
+
+      .hero-preview {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+        margin-bottom: 36px;
+      }
+
+      .panel {
+        background: rgba(255, 255, 255, 0.72);
+        backdrop-filter: blur(12px);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        padding: 28px;
+        box-shadow: 0 18px 50px rgba(16, 60, 53, 0.08);
+      }
+
+      .panel h2 {
+        margin: 0 0 12px;
+        font-size: 28px;
+      }
+
+      .panel p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .mock-wheel {
+        width: min(100%, 360px);
+        aspect-ratio: 1;
+        margin: 0 auto;
+        border-radius: 50%;
+        background: conic-gradient(
+          from -90deg,
+          var(--brand) 0deg 72deg,
+          var(--brand-deep) 72deg 144deg,
+          var(--brand-soft) 144deg 216deg,
+          var(--brand-mid) 216deg 288deg,
+          var(--brand-light) 288deg 360deg
+        );
+        position: relative;
+      }
+
+      .mock-wheel::before {
+        content: "";
+        position: absolute;
+        inset: 24%;
+        border-radius: 50%;
+        background: linear-gradient(180deg, #f8fbf9 0%, #eef6f2 100%);
+        box-shadow: inset 0 0 0 1px rgba(16, 60, 53, 0.08);
+      }
+
+      .mock-wheel::after {
+        content: "Mitteneder\A Gruppe";
+        white-space: pre;
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        color: var(--brand);
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 1.15;
+      }
+
+      .swatch-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+        margin-bottom: 36px;
+      }
+
+      .swatch-card {
+        overflow: hidden;
+        border-radius: 24px;
+        border: 1px solid var(--line);
+        background: white;
+        box-shadow: 0 14px 34px rgba(16, 60, 53, 0.08);
+      }
+
+      .swatch {
+        height: 110px;
+      }
+
+      .swatch-info {
+        padding: 18px 18px 20px;
+      }
+
+      .swatch-info h3 {
+        margin: 0 0 6px;
+        font-size: 18px;
+      }
+
+      .swatch-info p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.5;
+        font-size: 14px;
+      }
+
+      .usage-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .usage {
+        border-radius: 24px;
+        padding: 24px;
+        border: 1px solid var(--line);
+      }
+
+      .usage.brand {
+        background: linear-gradient(135deg, var(--brand) 0%, var(--brand-soft) 100%);
+        color: white;
+      }
+
+      .usage.brand p,
+      .usage.brand li {
+        color: rgba(255, 255, 255, 0.86);
+      }
+
+      .usage.soft {
+        background: linear-gradient(180deg, var(--warm-paper) 0%, var(--mist) 100%);
+      }
+
+      .usage h3 {
+        margin: 0 0 10px;
+        font-size: 24px;
+      }
+
+      .usage ul {
+        margin: 0;
+        padding-left: 20px;
+        line-height: 1.8;
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .chip {
+        padding: 10px 14px;
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 600;
+        border: 1px solid rgba(16, 60, 53, 0.08);
+      }
+
+      .chip.brand {
+        background: var(--brand);
+        color: white;
+      }
+
+      .chip.soft {
+        background: white;
+        color: var(--brand);
+      }
+
+      .chip.mist {
+        background: var(--mint-fog);
+        color: var(--brand-deep);
+      }
+
+      .notes {
+        margin-top: 36px;
+        border-radius: 24px;
+        padding: 24px;
+        background: rgba(255, 255, 255, 0.74);
+        border: 1px solid var(--line);
+      }
+
+      .notes h3 {
+        margin: 0 0 10px;
+        font-size: 24px;
+      }
+
+      .notes p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      @media (max-width: 960px) {
+        .hero-preview,
+        .swatch-grid,
+        .usage-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">Visuelle Orientierung</p>
+      <h1>Farbgestaltung rund um eure Hauptfarbe</h1>
+      <p class="lead">
+        Diese Seite zeigt dir direkt im Browser, wie eine stimmige Farbwelt rund um
+        das dunkle Marken-Grün funktionieren kann. Fokus: edel, ruhig, hochwertig
+        und trotzdem modern genug für interaktive Elemente wie das Wheel.
+      </p>
+
+      <section class="hero-preview">
+        <article class="panel">
+          <p class="eyebrow">Empfohlene Richtung</p>
+          <h2>Elegant und markennah</h2>
+          <p>
+            Der wichtigste Punkt ist, nicht zu weit vom Logo-Grün wegzugehen. Statt
+            vieler bunter Abstufungen wirkt eine kuratierte Staffel aus dunklen
+            Grüntönen, weichen Off-Whites und einem zurückhaltenden Mint-Nebel
+            deutlich hochwertiger.
+          </p>
+        </article>
+
+        <article class="panel">
+          <div class="mock-wheel"></div>
+        </article>
+      </section>
+
+      <section class="swatch-grid">
+        <article class="swatch-card">
+          <div class="swatch" style="background:#103c35"></div>
+          <div class="swatch-info">
+            <h3>Hauptfarbe</h3>
+            <p>
+              `#103C35` für zentrale CTAs, aktive Zustände, Headlines und den stärksten
+              visuellen Anker.
+            </p>
+          </div>
+        </article>
+
+        <article class="swatch-card">
+          <div class="swatch" style="background:#0b2a25"></div>
+          <div class="swatch-info">
+            <h3>Tiefer Kontrastton</h3>
+            <p>
+              `#0B2A25` für exklusive, ruhigere Tiefe. Gut für Hintergründe, Overlays
+              oder ein dunkleres Segment.
+            </p>
+          </div>
+        </article>
+
+        <article class="swatch-card">
+          <div class="swatch" style="background:#1c5a50"></div>
+          <div class="swatch-info">
+            <h3>Sekundärgrün</h3>
+            <p>
+              `#1C5A50` als natürlicher Begleiter zur Hauptfarbe. Ideal für Segment-
+              Staffeln und Interface-Flächen.
+            </p>
+          </div>
+        </article>
+
+        <article class="swatch-card">
+          <div class="swatch" style="background:#2a6b5d"></div>
+          <div class="swatch-info">
+            <h3>Mittlerer Akzent</h3>
+            <p>
+              `#2A6B5D` gibt etwas Bewegung hinein, ohne laut zu wirken. Gut für
+              Ringsegmente oder dezente Hover-Stufen.
+            </p>
+          </div>
+        </article>
+
+        <article class="swatch-card">
+          <div class="swatch" style="background:#5b8d82"></div>
+          <div class="swatch-info">
+            <h3>Heller Akzent</h3>
+            <p>
+              `#5B8D82` nur dosiert einsetzen, damit die Marke dunkel und souverän
+              bleibt.
+            </p>
+          </div>
+        </article>
+
+        <article class="swatch-card">
+          <div class="swatch" style="background:linear-gradient(180deg,#f7f4ee 0%,#edf5f1 100%)"></div>
+          <div class="swatch-info">
+            <h3>Flächen-Hintergrund</h3>
+            <p>
+              Warmes Off-White plus kühler grüner Nebel. Das hält Cards freundlich,
+              aber weiterhin kohärent zur Marke.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section class="usage-grid">
+        <article class="usage brand">
+          <h3>So wirkt die Marke stark</h3>
+          <ul>
+            <li>Dunkles Grün als Primärsignal statt viele helle Töne</li>
+            <li>Hover-Zustände eher abdunkeln oder sättigen statt bunt werden</li>
+            <li>Aktive Zustände lieber klar als verspielt</li>
+          </ul>
+          <div class="chips">
+            <span class="chip soft">Segment aktiv</span>
+            <span class="chip soft">CTA Hover</span>
+            <span class="chip soft">Headline</span>
+          </div>
+        </article>
+
+        <article class="usage soft">
+          <h3>So bleibt die Fläche leicht</h3>
+          <ul>
+            <li>Subtext-Cards in warmem Off-White statt Grau</li>
+            <li>Inline-Highlights in Hauptfarbe, nicht in vielen Einzelfarben</li>
+            <li>helle Mints nur als Luft, nicht als Dominanz</li>
+          </ul>
+          <div class="chips">
+            <span class="chip brand">Hauptfarbe</span>
+            <span class="chip mist">Milder Akzent</span>
+            <span class="chip soft">Pill / Badge</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="notes">
+        <h3>Gestaltungsregel</h3>
+        <p>
+          Wenn du unsicher bist, bleib bei einer 70/20/10-Logik: 70% ruhige helle
+          Flächen, 20% dunkle grüne Trägerflächen, 10% Akzentnuancen. Dadurch bleibt
+          das Design klar und markentreu, ohne flach oder zu technisch zu wirken.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

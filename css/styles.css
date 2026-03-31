@@ -1143,19 +1143,14 @@ iframe {
 }
 
 .cta {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: grid;
+  grid-template-columns: minmax(320px, 540px) minmax(420px, 1fr);
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
   color: white;
   padding: 20px;
-  height: 675px;
+  min-height: 675px;
 }
 .cta p,
 .cta a {
@@ -1165,12 +1160,23 @@ iframe {
 .cta p {
   margin-bottom: 14px;
 }
+.cta .cta-media {
+  /* TODO: Revisit CTA image sharpness/crop on different displays. */
+  justify-self: end;
+  align-self: center;
+  width: 100%;
+  max-width: 860px;
+  height: clamp(560px, 42vw, 675px);
+  overflow: hidden;
+}
+
 .cta .cta-img {
-  position: absolute;
-  right: 10%;
-  height: 675px;
-  width: auto;
-  max-width: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 58% center;
+  border-radius: 0;
 }
 .cta .text {
   display: -webkit-box;
@@ -1184,7 +1190,7 @@ iframe {
       -ms-flex-align: start;
           align-items: start;
   z-index: 1;
-  max-width: 577px;
+  max-width: 540px;
 }
 .cta .text .buttons {
   display: -webkit-box;
@@ -1968,8 +1974,8 @@ main {
     margin: 20px auto;
     margin-bottom: 0;
   }
-  .cta .cta-img {
-    right: 2%;
+  .cta .cta-media {
+    justify-self: end;
   }
   .hero-kontakt {
     gap: 30px;
@@ -2188,8 +2194,8 @@ main {
   .faq {
     margin: 20px auto;
   }
-  .cta .cta-img {
-    right: 0.5%;
+  .cta .cta-media {
+    justify-self: end;
   }
   .termin-boxes {
     display: -webkit-box;
