@@ -200,6 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const wheelSection = document.querySelector(".service-wheel-section");
   let pinnedKey = null;
   let detailAnimationToken = 0;
+  let isFadingToIntro = false;
 
   if (!segments.length || !detail) {
     return;
@@ -215,19 +216,28 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function showIntro() {
+    if (isFadingToIntro) {
+      return;
+    }
+
     const token = ++detailAnimationToken;
     setActiveSegment(null);
+    detail.getAnimations().forEach((animation) => animation.cancel());
 
     if (!wheelSection || !wheelSection.classList.contains("is-detail-visible")) {
+      isFadingToIntro = false;
       detail.setAttribute("aria-hidden", "true");
       return;
     }
 
     if (!detail.animate) {
+      isFadingToIntro = false;
       wheelSection.classList.remove("is-detail-visible");
       detail.setAttribute("aria-hidden", "true");
       return;
     }
+
+    isFadingToIntro = true;
 
     const fadeOut = detail.animate(
       [
@@ -243,9 +253,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     fadeOut.onfinish = () => {
       if (token !== detailAnimationToken) return;
+      detail.getAnimations().forEach((animation) => animation.cancel());
       if (wheelSection) {
         wheelSection.classList.remove("is-detail-visible");
       }
+      isFadingToIntro = false;
       detail.setAttribute("aria-hidden", "true");
     };
   }
@@ -254,6 +266,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const data = servicesData[key];
     if (!data) return;
 
+    isFadingToIntro = false;
+    detail.getAnimations().forEach((animation) => animation.cancel());
     setActiveSegment(key);
     if (wheelSection) {
       wheelSection.classList.add("is-detail-visible");
@@ -276,7 +290,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const item = document.createElement("span");
       item.className = "service-wheel-subsegment-inline";
       item.textContent = sub.label;
-      item.style.color = sub.color || "#103c35";
       detailSubsegments.appendChild(item);
     });
   }
@@ -364,6 +377,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const wrapper = document.querySelector(".service-wheel-svg-wrapper");
   if (wrapper) {
+    wrapper.addEventListener("mouseover", (event) => {
+      const target = event.target;
+      const previousTarget = event.relatedTarget;
+      const enteredNonSegment =
+        target instanceof Element && !target.closest(".service-segment");
+      const cameFromSegment =
+        previousTarget instanceof Element &&
+        wrapper.contains(previousTarget) &&
+        !!previousTarget.closest(".service-segment");
+
+      if (enteredNonSegment && cameFromSegment) {
+        showIntro();
+      }
+    });
+
     wrapper.addEventListener("focusout", (event) => {
       if (!wrapper.contains(event.relatedTarget)) {
         showIntro();
