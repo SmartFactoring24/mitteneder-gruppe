@@ -828,10 +828,42 @@ iframe {
 }
 .tabcontent .tabcontent-grid {
   display: grid;
-  grid-template-columns: 4fr 8fr;
+  grid-template-columns: clamp(320px, 34vw, 410px) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+.tabcontent .tabcontent-grid .tab-img {
+  width: 100%;
+  max-width: 410px;
+  height: auto;
+  aspect-ratio: 3/4;
+  justify-self: start;
+  align-self: start;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center 20%;
+     object-position: center 20%;
+}
+.tabcontent .tabcontent-grid .tab-img-laki {
+  -o-object-position: 46% 18%;
+     object-position: 46% 18%;
+}
+.tabcontent .tabcontent-grid .tab-img-leomimi {
+  -o-object-position: center 16%;
+     object-position: center 16%;
+}
+.tabcontent .tabcontent-grid .tab-img-fabian {
+  -o-object-fit: cover !important;
+     object-fit: cover !important;
+  -o-object-position: center 12% !important;
+     object-position: center 12% !important;
+}
+.tabcontent .tabcontent-grid .tab-img-nina {
+  -o-object-position: center 8% !important;
+     object-position: center 8% !important;
 }
 .tabcontent .tab-text {
-  padding: 32px 32px 32px 40px;
+  padding: 12px 32px 32px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2133,9 +2165,11 @@ main {
     grid-template-columns: 1fr;
   }
   .tabcontent .tabcontent-grid .tab-img {
-    aspect-ratio: 911/400;
-    -o-object-position: 0 27%;
-       object-position: 0 27%;
+    max-width: min(100%, 360px);
+    aspect-ratio: 3/4;
+    justify-self: center;
+    -o-object-position: center 18%;
+       object-position: center 18%;
   }
   .tabcontent .tabcontent-grid .tab-text {
     padding: 0;
