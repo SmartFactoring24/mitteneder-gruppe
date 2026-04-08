@@ -832,13 +832,21 @@ iframe {
   gap: 24px;
   align-items: start;
 }
-.tabcontent .tabcontent-grid .tab-img {
+.tabcontent .tabcontent-grid .tab-img-frame {
   width: 100%;
   max-width: 410px;
-  height: auto;
   aspect-ratio: 3/4;
+  overflow: hidden;
+  border-radius: 6px;
   justify-self: start;
   align-self: start;
+}
+.tabcontent .tabcontent-grid .tab-img {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  border-radius: 0;
+  display: block;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center 20%;
@@ -2165,11 +2173,13 @@ main {
     grid-template-columns: 1fr;
   }
   .tabcontent .tabcontent-grid .tab-img {
-    max-width: min(100%, 360px);
-    aspect-ratio: 3/4;
-    justify-self: center;
+    height: 100%;
     -o-object-position: center 18%;
        object-position: center 18%;
+  }
+  .tabcontent .tabcontent-grid .tab-img-frame {
+    max-width: min(100%, 360px);
+    justify-self: center;
   }
   .tabcontent .tabcontent-grid .tab-text {
     padding: 0;
