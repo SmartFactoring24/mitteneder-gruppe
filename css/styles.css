@@ -151,19 +151,8 @@ header .header-content .logo {
   overflow: visible;
 }
 header .header-content .logo img {
-  width: 230px;
+  width: 298px;
   display: block;
-}
-header .header-content .logo .logo-subline {
-  color: #67686c;
-  font-family: "Montserrat-SemiBold", sans-serif;
-  font-size: 10px;
-  line-height: 1;
-  letter-spacing: 0;
-  position: absolute;
-  left: 100px;
-  top: 38px;
-  white-space: nowrap;
 }
 header nav {
   display: -webkit-box;
@@ -2168,12 +2157,7 @@ main {
     width: 170px;
   }
   header .header-content .logo img {
-    width: 170px;
-  }
-  header .header-content .logo .logo-subline {
-    font-size: 7px;
-    left: 64px;
-    top: 24px;
+    width: 220px;
   }
   .g-2 {
     grid-template-columns: 1fr;
