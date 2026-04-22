@@ -266,7 +266,7 @@ header #menu-control {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url("../assets/images/schweinfurt-buero.jpg");
+  background-image: url("../assets/images/schweinfurt-buero.webp");
   background-size: cover;
   z-index: -4;
 }
@@ -280,14 +280,14 @@ header #menu-control {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url("../assets/images/schweinfurt-buero.jpg");
+  background-image: url("../assets/images/schweinfurt-buero.webp");
   background-size: cover;
   z-index: -4;
   background-position: center;
 }
 .hero.hero-sub-large.bg-niko::before {
   background-position: -323px 20%;
-  background-image: url("../assets/images/shooting-leo-04.jpg");
+  background-image: url("../assets/images/shooting-leo-04.webp");
 }
 .hero.hero-sub::before {
   content: "";
@@ -296,7 +296,7 @@ header #menu-control {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url("../assets/images/schweinfurt-buero.jpg");
+  background-image: url("../assets/images/schweinfurt-buero.webp");
   background-size: cover;
   z-index: -4;
   background-position: center;
@@ -321,7 +321,7 @@ header #menu-control {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url("../assets/images/schweinfurt-buero.jpg");
+  background-image: url("../assets/images/schweinfurt-buero.webp");
   background-size: cover;
   z-index: -4;
   background-position: center;

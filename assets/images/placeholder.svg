@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Bildplatzhalter</title>
+  <desc id="desc">Neutraler Platzhalter fuer temporaer entfernte Website-Bilder.</desc>
+  <rect width="1200" height="800" fill="#f4f1ec"/>
+  <rect x="48" y="48" width="1104" height="704" rx="12" fill="none" stroke="#d7cec2" stroke-width="8"/>
+  <path d="M330 520l164-176 132 122 82-86 176 140H330z" fill="#d7cec2"/>
+  <circle cx="442" cy="270" r="62" fill="#d7cec2"/>
+</svg>
