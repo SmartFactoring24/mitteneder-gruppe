@@ -75,22 +75,22 @@
     <style>
       @font-face {
         font-family: "Montserrat-Regular";
-        src: url(/assets/fonts/Montserrat/static/Montserrat-Regular.ttf);
+        src: url(/assets/fonts/Montserrat/static/Montserrat-Regular.woff2) format("woff2"), url(/assets/fonts/Montserrat/static/Montserrat-Regular.ttf) format("truetype");
       }
 
       @font-face {
         font-family: "Montserrat-Bold";
-        src: url(/assets/fonts/Montserrat/static/Montserrat-Bold.ttf);
+        src: url(/assets/fonts/Montserrat/static/Montserrat-Bold.woff2) format("woff2"), url(/assets/fonts/Montserrat/static/Montserrat-Bold.ttf) format("truetype");
       }
 
       @font-face {
         font-family: "Montserrat-SemiBold";
-        src: url(/assets/fonts/Montserrat/static/Montserrat-SemiBold.ttf);
+        src: url(/assets/fonts/Montserrat/static/Montserrat-SemiBold.woff2) format("woff2"), url(/assets/fonts/Montserrat/static/Montserrat-SemiBold.ttf) format("truetype");
       }
 
       @font-face {
         font-family: "Poppins-SemiBold";
-        src: url(/assets/fonts/Poppins/Poppins-SemiBold.ttf);
+        src: url(/assets/fonts/Poppins/Poppins-SemiBold.woff2) format("woff2"), url(/assets/fonts/Poppins/Poppins-SemiBold.ttf) format("truetype");
       }
 
       body,
@@ -181,7 +181,7 @@
           class="hero-bg"
           style="object-position: 30% 20%"
           src="assets/images/shooting-leo-40.webp"
-          alt=""
+          alt="" decoding="async" fetchpriority="high" srcset="assets/images/shooting-leo-40-800.webp 800w, assets/images/shooting-leo-40-1400.webp 1400w, assets/images/shooting-leo-40.webp 2400w" sizes="100vw"
         />
       </div>
 
@@ -205,7 +205,7 @@
                   <div class="kunde">
                     <img
                       class="kunde-bg"
-                      src="assets/images/julian-ullrich.webp"
+                      src="assets/images/julian-ullrich.webp" decoding="async" loading="lazy"
                     />
                     <div class="kunde-details">
                       <h3>Julian Ullrich</h3>
@@ -225,7 +225,7 @@
                   <div class="kunde">
                     <img
                       class="kunde-bg"
-                      src="assets/images/bartosz-bialy.webp"
+                      src="assets/images/bartosz-bialy.webp" decoding="async" loading="lazy" srcset="assets/images/bartosz-bialy-800.webp 800w, assets/images/bartosz-bialy-1400.webp 1400w, assets/images/bartosz-bialy.webp 1440w" sizes="(max-width: 768px) 100vw, 50vw"
                     />
                     <div class="kunde-details">
                       <h3>Bartosz Bialy</h3>
@@ -245,7 +245,7 @@
                   <div class="kunde">
                     <img
                       class="kunde-bg"
-                      src="assets/images/florian-wolf-referenz.webp"
+                      src="assets/images/florian-wolf-referenz.webp" decoding="async" loading="lazy"
                     />
                     <div class="kunde-details">
                       <h3>Florian Wolff</h3>
@@ -266,7 +266,7 @@
                   <div class="kunde">
                     <img
                       class="kunde-bg"
-                      src="assets/images/bildschirmfoto-2021-05-28-um-13-47-35.webp"
+                      src="assets/images/bildschirmfoto-2021-05-28-um-13-47-35.webp" decoding="async" loading="lazy"
                     />
                     <div class="kunde-details">
                       <h3>Ralf Radziejewski</h3>
@@ -288,7 +288,7 @@
                   <div class="kunde">
                     <img
                       class="kunde-bg"
-                      src="assets/images/fabian-gehrig.webp"
+                      src="assets/images/fabian-gehrig.webp" decoding="async" loading="lazy" srcset="assets/images/fabian-gehrig-800.webp 800w, assets/images/fabian-gehrig-1400.webp 1400w, assets/images/fabian-gehrig.webp 1440w" sizes="(max-width: 768px) 100vw, 50vw"
                     />
                     <div class="kunde-details">
                       <h3>Fabian Gehring</h3>
@@ -308,7 +308,7 @@
                   <div class="kunde">
                     <img
                       class="kunde-bg"
-                      src="assets/images/bildschirmfoto-2021-05-28-um-13-54-12-e1622219983735.webp"
+                      src="assets/images/bildschirmfoto-2021-05-28-um-13-54-12-e1622219983735.webp" decoding="async" loading="lazy"
                     />
                     <div class="kunde-details">
                       <h3>Isabell Heck</h3>
