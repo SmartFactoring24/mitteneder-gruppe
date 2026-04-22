@@ -92,6 +92,7 @@
   line-height: 24px;
   cursor: pointer;
   border-radius: 5px;
+  white-space: normal;
 }
 
 #silktide-wrapper .st-button--primary {
@@ -136,6 +137,7 @@
   animation: silktide-slideInDown 350ms ease-out forwards;
   animation-delay: 0.3s;
   box-shadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
+  z-index: 2;
 }
 
 #silktide-banner:focus {
@@ -241,6 +243,47 @@
   align-items: center;
   justify-content: space-between;
   flex-grow: 1;
+  flex-wrap: wrap;
+}
+
+#silktide-banner .actions-row .st-button {
+  flex: 1 1 180px;
+}
+
+@media (max-width: 599px) {
+  #silktide-banner,
+  #silktide-banner.bottomLeft,
+  #silktide-banner.bottomCenter {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    width: auto;
+    max-width: none;
+    max-height: calc(100svh - 24px);
+    padding: 20px;
+  }
+
+  #silktide-banner .actions {
+    gap: 12px;
+    margin-top: 18px;
+  }
+
+  #silktide-banner .actions-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  #silktide-banner .actions-row .st-button,
+  #silktide-banner .accept-all {
+    width: 100%;
+    flex-basis: auto;
+  }
+
+  #silktide-banner .preferences {
+    justify-content: center;
+    padding: 8px 0;
+  }
 }
 
 /* --------------------------------
@@ -513,6 +556,7 @@
   background-color: var(--backdropBackgroundColor);
   backdrop-filter: blur(var(--backdropBackgroundBlur));
   pointer-events: all;
+  z-index: 1;
 }
 
 /* --------------------------------

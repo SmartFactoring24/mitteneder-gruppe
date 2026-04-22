@@ -944,6 +944,64 @@ class SilktideCookieBanner {
   }
 })();
 
+const silktideIsEnglish = document.documentElement.lang === "en";
+
+const silktideConsentText = silktideIsEnglish
+  ? {
+      essentialName: "Essential (SuperChat, Typeform)",
+      essentialDescription:
+        "<p>Essential cookies enable basic functions and are required for the website to function properly.</p>",
+      statisticsName: "Statistics (we currently do not use statistics cookies)",
+      statisticsDescription:
+        "<p>Statistics cookies help us understand how visitors interact with our website. We currently do not use statistics cookies.</p>",
+      externalMediaName: "External media (Vimeo)",
+      externalMediaDescription:
+        "<p>Content from video platforms and social networks is blocked by default to protect your privacy. If you accept cookies for external media, this content can be displayed without further consent.</p>",
+      marketingName: "Marketing (we currently do not use marketing cookies)",
+      marketingDescription:
+        "<p>Marketing cookies are used by third-party providers or publishers to display personalized advertising by tracking visitors across websites. We currently do not use marketing cookies.</p>",
+      typeformTitle: "External media",
+      vimeoPlaceholder:
+        "To view this video, please consent to the use of cookies for external media. To delete Vimeo cookies that have already been set, please use your browser's cookie management or delete the cookies manually in your browser settings.",
+      bannerDescription:
+        "<p><b>Cookie information</b></p><p>We use cookies on our website. Some are essential, while others help us improve this website and your experience.</p><p>We use cookies to embed content from third-party providers such as <b>SuperChat, Typeform and Vimeo</b>. These services allow users to contact us or use interactive content.</p>",
+      acceptAll: "Accept all",
+      rejectNonEssential: "Reject non-essential",
+      preferences: "Settings",
+      preferencesAccessible: "Change settings",
+      preferencesTitle: "Privacy settings",
+      preferencesDescription:
+        "<p>Here you will find an overview of all cookies used. You can give your consent to entire categories or view further information and select only specific cookies.</p>",
+    }
+  : {
+      essentialName: "Essenziell (SuperChat, Typeform)",
+      essentialDescription:
+        "<p>Essenzielle Cookies ermöglichen grundlegende Funktionen und sind für die einwandfreie Funktion der Website erforderlich.</p>",
+      statisticsName:
+        "Statistiken (Wir verwenden derzeit keine statistischen Cookies)",
+      statisticsDescription:
+        "<p>Statistik-Cookies helfen uns zu verstehen, wie Besucher mit unserer Website interagieren. Wir verwenden derzeit keine statistischen Cookies.</p>",
+      externalMediaName: "Externe Medien (Vimeo)",
+      externalMediaDescription:
+        "<p>Inhalte von Videoplattformen und sozialen Netzwerken werden standardmäßig blockiert, um Ihre Privatsphäre zu schützen. Wenn Sie Cookies von externen Medien akzeptieren, können diese Inhalte ohne weitere Zustimmung angezeigt werden.</p>",
+      marketingName:
+        "Marketing (Wir verwenden derzeit keine Marketing-Cookies)",
+      marketingDescription:
+        "<p>Marketing-Cookies werden von Drittanbietern oder Publishern verwendet, um personalisierte Werbung anzuzeigen. Sie tun dies, indem sie Besucher über Websites hinweg verfolgen. Wir verwenden derzeit keine Marketing-Cookies.</p>",
+      typeformTitle: "Externe Medien",
+      vimeoPlaceholder:
+        "Um dieses Video zu sehen, stimmen Sie bitte der Verwendung von Cookies für externe Medien zu. Um gesetzte Vimeo-Cookies zu löschen, nutzen Sie bitte die Cookie-Verwaltung Ihres Browsers oder löschen Sie die Cookies manuell über die Browsereinstellungen.",
+      bannerDescription:
+        "<p><b>Cookie Information</b></p><p>Wir nutzen Cookies auf unserer Website. Einige von ihnen sind essenziell, während andere uns helfen, diese Website und Ihre Erfahrung zu verbessern.</p><p>Wir verwenden Cookies, um Inhalte von Drittanbietern wie <b>SuperChat, Typeform und Vimeo</b> einzubinden. Diese Dienste ermöglichen es Nutzern, mit uns in Kontakt zu treten oder interaktive Inhalte zu nutzen.</p>",
+      acceptAll: "Alle akzeptieren",
+      rejectNonEssential: "Nicht notwendige ablehnen",
+      preferences: "Einstellungen",
+      preferencesAccessible: "Einstellungen ändern",
+      preferencesTitle: "Datenschutzeinstellungen",
+      preferencesDescription:
+        "<p>Hier finden Sie eine Übersicht über alle verwendeten Cookies. Sie können Ihre Einwilligung zu ganzen Kategorien geben oder sich weitere Informationen anzeigen lassen und so nur bestimmte Cookies auswählen.</p>",
+    };
+
 silktideCookieBannerManager.updateCookieBannerConfig({
   background: {
     showBackground: true,
@@ -954,9 +1012,8 @@ silktideCookieBannerManager.updateCookieBannerConfig({
   cookieTypes: [
     {
       id: "essenziell",
-      name: "Essenziell (SuperChat, Typeform)",
-      description:
-        "<p>Essenzielle Cookies ermöglichen grundlegende Funktionen und sind für die einwandfreie Funktion der Website erforderlich.  </p>",
+      name: silktideConsentText.essentialName,
+      description: silktideConsentText.essentialDescription,
       required: true,
       onAccept: function () {
   // --- SUPERCHAT TEMPORÄR DEAKTIVIERT ---
@@ -973,7 +1030,7 @@ silktideCookieBannerManager.updateCookieBannerConfig({
   // Typeform bleibt aktiv
   document.querySelectorAll(".typeform-embed").forEach(function (el) {
     const src = el.getAttribute("data-src");
-    const title = el.getAttribute("data-title") || "Externe Medien";
+    const title = el.getAttribute("data-title") || silktideConsentText.typeformTitle;
     if (src) {
       const iframe = document.createElement("iframe");
       iframe.src = src;
@@ -992,9 +1049,8 @@ silktideCookieBannerManager.updateCookieBannerConfig({
     },
     {
       id: "statistiken",
-      name: "Statistiken (Wir verwenden derzeit keine statistischen Cookies) ",
-      description:
-        "<p>Marketing-Cookies werden von Drittanbietern oder Publishern verwendet, um personalisierte Werbung anzuzeigen. Sie tun dies, indem sie Besucher über Websites hinweg verfolgen.</p>",
+      name: silktideConsentText.statisticsName,
+      description: silktideConsentText.statisticsDescription,
       required: false,
       onAccept: function () {
         /*   gtag("consent", "update", {
@@ -1016,9 +1072,8 @@ silktideCookieBannerManager.updateCookieBannerConfig({
     },
     {
       id: "externe_medien",
-      name: "Externe Medien (Vimeo)",
-      description:
-        "<p>Inhalte von Videoplattformen und sozialen Netzwerken werden standardmäßig blockiert, um Ihre Privatsphäre zu schützen. Wenn Sie Cookies von externen Medien akzeptieren, können diese Inhalte ohne weitere Zustimmung angezeigt werden.</p>",
+      name: silktideConsentText.externalMediaName,
+      description: silktideConsentText.externalMediaDescription,
       required: false,
       onAccept: function () {
         document.querySelectorAll(".vimeo-embed").forEach(function (el) {
@@ -1046,8 +1101,7 @@ silktideCookieBannerManager.updateCookieBannerConfig({
           }
 
           // Restore placeholder text
-          el.textContent =
-            "Um dieses Video zu sehen, stimmen Sie bitte der Verwendung von Cookies für externe Medien zu. Um gesetzte Vimeo-Cookies zu löschen, nutzen Sie bitte die Cookie-Verwaltung Ihres Browsers oder löschen Sie die Cookies manuell über die Browsereinstellungen.";
+          el.textContent = silktideConsentText.vimeoPlaceholder;
           el.style.display = "block"; // Ensure it's visible
         });
 
@@ -1056,9 +1110,8 @@ silktideCookieBannerManager.updateCookieBannerConfig({
     },
     {
       id: "marketing",
-      name: "Marketing (Wir verwenden derzeit keine marketing Cookies)",
-      description:
-        "<p>Marketing-Cookies werden von Drittanbietern oder Publishern verwendet, um personalisierte Werbung anzuzeigen. Sie tun dies, indem sie Besucher über Websites hinweg verfolgen.</p>",
+      name: silktideConsentText.marketingName,
+      description: silktideConsentText.marketingDescription,
       required: false,
       onAccept: function () {
         console.log("Add accept logic for Marketing");
@@ -1070,19 +1123,18 @@ silktideCookieBannerManager.updateCookieBannerConfig({
   ],
   text: {
     banner: {
-      description:
-        "<p> <b> Cookie Information </b>  </p> <p> Wir nutzen Cookies auf unserer Website. Einige von ihnen sind essenziell, während andere uns helfen, diese Website und Ihre Erfahrung zu verbessern. </p> <p> Wir verwenden Cookies, um Inhalte von Drittanbietern wie <b>SuperChat, Typeform und Vimeo</b> einzubinden. Diese Dienste ermöglichen es Nutzern, mit uns in Kontakt zu treten oder interaktive Inhalte zu nutzen.</p> </p>",
-      acceptAllButtonText: "Alle akzeptieren",
-      acceptAllButtonAccessibleLabel: "Alle akzeptieren",
-      rejectNonEssentialButtonText: "Nicht notwendige ablehnen",
-      rejectNonEssentialButtonAccessibleLabel: "Nicht notwendige ablehnen",
-      preferencesButtonText: "Einstellungen",
-      preferencesButtonAccessibleLabel: "Einstellungen ändern",
+      description: silktideConsentText.bannerDescription,
+      acceptAllButtonText: silktideConsentText.acceptAll,
+      acceptAllButtonAccessibleLabel: silktideConsentText.acceptAll,
+      rejectNonEssentialButtonText: silktideConsentText.rejectNonEssential,
+      rejectNonEssentialButtonAccessibleLabel:
+        silktideConsentText.rejectNonEssential,
+      preferencesButtonText: silktideConsentText.preferences,
+      preferencesButtonAccessibleLabel: silktideConsentText.preferencesAccessible,
     },
     preferences: {
-      title: "Datenschutzeinstellungen",
-      description:
-        "<p>Hier finden Sie eine Übersicht über alle verwendeten Cookies. Sie können Ihre Einwilligung zu ganzen Kategorien geben oder sich weitere Informationen anzeigen lassen und so nur bestimmte Cookies auswählen.</p>",
+      title: silktideConsentText.preferencesTitle,
+      description: silktideConsentText.preferencesDescription,
       creditLinkText: "",
       creditLinkAccessibleLabel: "",
     },

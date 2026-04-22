@@ -190,6 +190,91 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
+  if (document.documentElement.lang === "en") {
+    Object.assign(servicesData, {
+      steuern: {
+        title: "Taxes",
+        kicker: "Service area",
+        intro:
+          "We view your tax strategy together with wealth, risk and liquidity.",
+        subsegments: [
+          { label: "Strategic coordination", color: "#103c35" },
+          { label: "Tax-efficient structures", color: "#145248" },
+          { label: "Coordination with tax firms", color: "#1b6a5f" }
+        ],
+        bullets: [
+          "Coordination with your tax advisor and relevant law firms",
+          "Tax-efficient investment and real estate structures",
+          "Support around income, wealth and holding structures"
+        ]
+      },
+      investment: {
+        title: "Investment",
+        kicker: "Service area",
+        intro:
+          "From ETF savings plans to individual wealth structures, we build your investment concept around your goals.",
+        subsegments: [
+          { label: "Wealth building", color: "#145248" },
+          { label: "Wealth protection", color: "#1b6a5f" },
+          { label: "Professional investors", color: "#248474" }
+        ],
+        bullets: [
+          "Individual portfolio and ETF concepts for wealth building and protection",
+          "Support with one-off investments, savings plans and strategy changes",
+          "Coordination with specialists for entrepreneurs, professional athletes and other sophisticated investors"
+        ]
+      },
+      versicherungen: {
+        title: "Insurance",
+        kicker: "Service area",
+        intro:
+          "We protect what matters to you: professionally, transparently and without unnecessary complexity.",
+        subsegments: [
+          { label: "Income and earning power", color: "#1b6a5f" },
+          { label: "Family and health", color: "#248474" },
+          { label: "Assets and business", color: "#2f9d8b" }
+        ],
+        bullets: [
+          "Protection for income, family, health and assets",
+          "A concept instead of product sales: tailored private and business insurance combinations",
+          "Ongoing support, claims guidance and regular coverage reviews"
+        ]
+      },
+      immobilien: {
+        title: "Real estate",
+        kicker: "Service area",
+        intro:
+          "Real estate as part of your strategy, from financing to long-term structuring.",
+        subsegments: [
+          { label: "Financing", color: "#248474" },
+          { label: "Wealth building", color: "#2f9d8b" },
+          { label: "Portfolio growth", color: "#145248" }
+        ],
+        bullets: [
+          "Financing concepts with access to the full banking market",
+          "Real estate as a component of wealth building and retirement planning",
+          "Support with purchases, refinancing and portfolio expansion"
+        ]
+      },
+      vollmachten: {
+        title: "Powers of attorney and wills",
+        kicker: "Service area",
+        intro:
+          "So everything is arranged in exceptional situations: legally sound and easy to understand.",
+        subsegments: [
+          { label: "Power of attorney", color: "#103c35" },
+          { label: "Living will", color: "#145248" },
+          { label: "Succession and inheritance", color: "#1b6a5f" }
+        ],
+        bullets: [
+          "Guidance on living wills, powers of attorney and emergency folders",
+          "Coordination with notaries and inheritance law specialists",
+          "Structuring of private wealth and business succession"
+        ]
+      }
+    });
+  }
+
   const segments = document.querySelectorAll(".service-segment");
   const detail = document.getElementById("serviceWheelDetail");
   const detailKicker = document.getElementById("serviceWheelDetailKicker");

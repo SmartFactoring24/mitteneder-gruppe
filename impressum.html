@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="de">
   <head>
 
@@ -19,8 +19,25 @@
       name="description"
       content="Hier geht es zum Impressum der Versicherungsagentur der Mitteneder Gruppe."
     />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Mitteneder Gruppe" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:title" content="Impressum | Mitteneder Gruppe" />
+    <meta property="og:description" content="Hier geht es zum Impressum der Versicherungsagentur der Mitteneder Gruppe." />
+    <meta property="og:url" content="/impressum.html" />
+    <meta property="og:image" content="/assets/identity/linkvorschau.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Impressum | Mitteneder Gruppe" />
+    <meta name="twitter:description" content="Hier geht es zum Impressum der Versicherungsagentur der Mitteneder Gruppe." />
+    <meta name="twitter:image" content="/assets/identity/linkvorschau.jpg" />
 
-    <!-- Favicon and icons -->
+    
+    <link rel="canonical" href="/impressum.html" />
+    <link rel="alternate" hreflang="de" href="/impressum.html" />
+    <link rel="alternate" hreflang="en" href="/en/legal-notice.html" />
+    <link rel="alternate" hreflang="x-default" href="/impressum.html" />
+<!-- Favicon and icons -->
 
     <link rel="icon" href="assets/identity/favicon.ico" type="image/x-icon" />
     <link
@@ -107,6 +124,7 @@
     <link rel="stylesheet" href="css/styles.css?v=0.1" />
   </head>
   <body>
+    <noscript class="site-noscript">Einige Funktionen dieser Website, darunter Formulare, Videos und Cookie-Einstellungen, benötigen JavaScript. Bitte aktiviere JavaScript für die vollständige Nutzung.</noscript>
     <header>
       <div class="header-content">
         <a href="/" class="logo">
@@ -114,17 +132,18 @@
         </a>
 
         <img id="menu-control" src="assets/icons/menu.svg" alt="" />
+
 
+        <a href="/en/legal-notice.html" class="language-switch" hreflang="en" aria-label="Switch language to English"><img src="assets/icons/globe.svg" alt="" /><span>EN</span></a>
         <nav id="menu">
-          <a href="ueber-uns.html">Über uns</a>
+          <a class="nav-start" href="ueber-uns.html">Über uns</a>
           <a href="fuerwen.html">Für wen</a>
           <a href="leistungen.html">Leistungen</a>
           <a href="referenzen.html">Referenzen</a>
-          <a href="karriere.html">Karriere</a>
-
-          <a href="terminvereinbarung.html" class="btn">Termin buchen</a>
+          <a class="nav-spacer-after" href="karriere.html">Karriere</a>
+<a href="terminvereinbarung.html" class="btn nav-cta-start">Termin buchen</a>
           <a href="kontakt.html" class="btn btn-dark">Kontakt</a>
-        </nav>
+          </nav>
       </div>
     </header>
 
@@ -309,17 +328,7 @@ Für Inhalte verlinkter Seiten sind ausschließlich deren Betreiber verantwortli
         </div>
       </div>
       <div class="footer-bottom">
-        <!-- <div class="socials">
-          <a href="">
-            <img src="assets/icons/linkedin.svg" alt="" />
-          </a>
-          <a href="">
-            <img src="assets/icons/facebook.svg" alt="" />
-          </a>
-          <a href="">
-            <img src="assets/icons/instagram.svg" alt="" />
-          </a>
-        </div> -->
+        
         <div class="legal">
           <a href="datenschutz.html">Datenschutz</a>
           <a href="impressum.html" >Impressum</a>
